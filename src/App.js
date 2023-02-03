@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import Sidebar from "./components/Sidebar";
+import API from "./services/API";
 
 function App() {
+  const [allTags, setAllTags] = useState([]);
+
+  useEffect(() => {
+    API.getAllTags().then((data) => {
+      setAllTags(data);
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header className="container-fluid py-5 bg-dark bg-opacity-10 text-center">
+        <h1 className="">Blog Post App</h1>
       </header>
-    </div>
+      <div className="container">
+        <div className="row">
+          <div className="col-2">
+            {allTags.length > 0 && <Sidebar tags={allTags} />}
+          </div>
+          <div className="col-10"></div>
+        </div>
+      </div>
+    </>
   );
 }
 
