@@ -1,0 +1,164 @@
+:root {
+    --cyan: hsl(179, 62%, 43%);
+    --bright-yellow: hsl(71, 73%, 54%);
+
+    --light-gray: hsl(204, 43%, 93%);
+    --grayish-blue: hsl(218, 22%, 67%);
+}
+
+/*
+=============== 
+Global Styles
+===============
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    font-weight: 400;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 375px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    height: 80vh;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+}
+
+
+
+.section-1 {
+    height: 100%;
+    margin: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-1>* {
+    padding: 10px 0;
+}
+
+.section-2>* {
+    padding: 10px 0;
+}
+
+.section-3>* {
+    padding: 10px 0;
+}
+
+.section-1 h3 {
+    color: var(--cyan);
+    font-size: 1.5rem;
+
+}
+
+.section-1 h4 {
+    color: var(--bright-yellow);
+
+}
+
+.section-1 p {
+    color: var(--grayish-blue);
+    line-height: 1.8rem;
+
+}
+
+.section-2 {
+    background-color: var(--cyan);
+    padding: 5px 15px;
+    color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-2 h3 {
+    font-size: 1.5rem;
+}
+
+.cost {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.anual {
+    color: var(--light-gray);
+}
+
+.access {
+    color: var(--light-gray);
+    padding: 0;
+}
+
+.btn {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    height: 3rem;
+    background-color: var(--bright-yellow);
+    color: white;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    margin-top: 30px;
+}
+
+.section-3 {
+    height: 100%;
+    padding: 10px 15px;
+    background-color: #4ABEBD;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-3 h3 {
+    color: white;
+}
+
+.list li {
+    list-style: none;
+    color: var(--light-gray);
+    line-height: 25px;
+}
+
+@media screen and (min-width: 376px) {
+    body {
+        background-color: #E6EFF6;
+    }
+
+    .container {
+        max-width: 1440px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .section-1 {
+        grid-column: 1 / span 2;
+
+    }
+}
